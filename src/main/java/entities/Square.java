@@ -40,7 +40,7 @@ public class Square extends Shape {
         final StringBuffer sb = new StringBuffer("Miếng đất hình vuông {");
         sb.append("Điểm trái trên = ").append(topLeft.toString());
         sb.append(", chiều rộng = ").append(width);
-        sb.append(" ,diện tích: ").append(calculateArea());
+        sb.append(", diện tích = ").append(calculateArea());
         sb.append('}');
         return sb.toString();
     }

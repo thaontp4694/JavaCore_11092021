@@ -48,7 +48,7 @@ public class Rectangle extends Shape {
         sb.append("Điểm trái trên = ").append(topLeft.toString());
         sb.append(", chiều dài = ").append(height);
         sb.append(", chiều rộng = ").append(width);
-        sb.append(" ,diện tích: ").append(calculateArea());
+        sb.append(", diện tích = ").append(calculateArea());
         sb.append('}');
         return sb.toString();
     }

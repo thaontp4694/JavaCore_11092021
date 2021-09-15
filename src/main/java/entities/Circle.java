@@ -39,7 +39,7 @@ public class Circle extends Shape {
         final StringBuffer sb = new StringBuffer("Miếng đất hình tròn {");
         sb.append("Tọa độ tâm = ").append(center.toString());
         sb.append(", bán kính = ").append(radius);
-        sb.append(" ,diện tích: ").append(calculateArea());
+        sb.append(", diện tích = ").append(calculateArea());
         sb.append('}');
         return sb.toString();
     }

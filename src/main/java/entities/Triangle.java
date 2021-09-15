@@ -8,6 +8,9 @@ public class Triangle extends Shape {
     private Point p3;
 
     public Triangle() {
+        this.p1 = Point.generate();
+        this.p2 = Point.generate();
+        this.p3 = Point.generate();
     }
 
     public Triangle(Point p1, Point p2, Point p3) {
@@ -45,11 +48,12 @@ public class Triangle extends Shape {
     @Override
     public String toString() {
         Triangle triangle = new Triangle();
-        final StringBuilder sb = new StringBuilder("Miếng đất hình tam giác {");
-        sb.append("đỉnh A: ").append(p1);
-        sb.append(", đỉnh B: ").append(p2);
-        sb.append(", đỉnh C: ").append(p3);
-        sb.append(", diện tích: ").append(calculateArea());
+        final StringBuilder sb = new StringBuilder("Miếng đất hình tam giác {\n");
+        sb
+                .append("Cạnh A = ").append("(").append(p1.getX()).append(", ").append(p1.getY()).append(")")
+                .append(", cạnh B = ").append("(").append(p2.getX()).append(", ").append(p2.getY()).append(")")
+                .append(", cạnh C = ").append("(").append(p3.getX()).append(", ").append(p3.getY()).append(")");
+        sb.append(", diện tích = ").append(calculateArea());
         sb.append('}');
         return sb.toString();
     }

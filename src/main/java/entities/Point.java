@@ -53,5 +53,12 @@ public class Point {
         double dy = another.y - this.y;
         return Math.sqrt(dx * dx + dy * dy);
     }
+    public static Point generate() {
+        final int max = 10;
+        final int min = -10;
+        int x = (int) Math.floor(Math.random() * (max - min)) + min;
+        int y = (int) Math.floor(Math.random() * (max - min)) + min;
+        return new Point(x, y);
+    }
 }
 
