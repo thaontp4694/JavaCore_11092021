@@ -34,11 +34,13 @@ public class Rectangle extends Shape {
         System.out.print("Nhập chiều rộng: ");
         this.width = scanner.nextInt();
     }
+
     //Tính diện tích đất
     @Override
     public double calculateArea() {
         return this.width * this.height;
     }
+
     @Override
     public String toString() {
         Rectangle rectangle = new Rectangle();

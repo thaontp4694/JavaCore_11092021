@@ -13,6 +13,7 @@ public class Circle extends Shape {
         this.center = center;
         this.radius = radius;
     }
+
     @Override
     public void input() {
         System.out.println("Nhập tọa độ tâm đường tròn: ");
@@ -25,11 +26,13 @@ public class Circle extends Shape {
         System.out.print("Nhập bán kính: ");
         this.radius = scanner.nextInt();
     }
+
     //Tính diện tích đất
     @Override
     public double calculateArea() {
         return Math.PI * this.radius * this.radius;
     }
+
     @Override
     public String toString() {
         Circle circle = new Circle();

@@ -13,6 +13,7 @@ public class Square extends Shape {
         this.topLeft = topLeft;
         this.width = width;
     }
+
     @Override
     public void input() {
         System.out.println("Nhập tọa độ điểm trái trên: ");
@@ -26,11 +27,13 @@ public class Square extends Shape {
         System.out.print("Nhập chiều rộng: ");
         this.width = scanner.nextInt();
     }
+
     //Tính diện tích đất
     @Override
     public double calculateArea() {
         return this.width * this.width;
     }
+
     @Override
     public String toString() {
         Square square = new Square();

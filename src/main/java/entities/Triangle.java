@@ -3,7 +3,9 @@ package entities;
 import java.util.Scanner;
 
 public class Triangle extends Shape {
-    private Point p1, p2, p3;
+    private Point p1;
+    private Point p2;
+    private Point p3;
 
     public Triangle() {
     }
@@ -13,37 +15,44 @@ public class Triangle extends Shape {
         this.p2 = p2;
         this.p3 = p3;
     }
-    public double chuVi() {
-        int result = 0;
-        result += this.p1 + this.p2 + this.p3;
-        return result;
+
+    public double calculatePerimeter() {
+        double a = this.p1.distance(this.p2);
+        double b = this.p1.distance(this.p3);
+        double c = this.p2.distance(this.p3);
+        return a + b + c;
     }
 
     public double calculateArea() {
-        double dienTich;
-        double p = chuVi() / 2;
-        dienTich = Math.sqrt(p * (p - this.p1) * (p - this.p2) * (p - this.p3));
-        return dienTich;
+        double a = this.p1.distance(this.p2);
+        double b = this.p1.distance(this.p3);
+        double c = this.p2.distance(this.p3);
+        double p = (a + b + c) / 2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+    }
+
+    @Override
+    public void input() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập điểm A: ");
+        int p1 = scanner.nextInt();
+        System.out.print("Nhập điểm B: ");
+        int p2 = scanner.nextInt();
+        System.out.print("Nhập điểm C: ");
+        int p3 = scanner.nextInt();
     }
 
     @Override
     public String toString() {
+        Triangle triangle = new Triangle();
         final StringBuilder sb = new StringBuilder("Miếng đất hình tam giác {");
         sb.append("đỉnh A: ").append(p1);
         sb.append(", đỉnh B: ").append(p2);
         sb.append(", đỉnh C: ").append(p3);
-        sb.append(')');
+        sb.append(", diện tích: ").append(calculateArea());
+        sb.append('}');
         return sb.toString();
     }
 
 
-    public void input() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập đỉnh A: ");
-        this.p1 = scanner.nextInt();
-        System.out.print("Nhập đỉnh B: ");
-        this.p2 = scanner.nextInt();
-        System.out.print("Nhập đỉnh C: ");
-        this.p3 = scanner.nextInt();
-    }
 }

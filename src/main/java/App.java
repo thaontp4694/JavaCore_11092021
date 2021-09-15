@@ -21,35 +21,34 @@ public class App {
         }
 
 
-            double total = 0;
-            for (int i = 0; i < n; i++) {
-                total += list[i].calculateArea();
-            }
-
-            System.out.print("Nhập giá 1 m2: ");
-            int unitPrice = scanner.nextInt();
-            System.out.format("Tổng tiền = %f\n", total * unitPrice);
+        double total = 0;
+        for (int i = 0; i < n; i++) {
+            total += list[i].calculateArea();
         }
 
-        private static Shape createShape ( int choose){
-            switch (choose) {
-                case 1:
-                    return new Square();
+        System.out.print("Nhập giá 1 m2: ");
+        int unitPrice = scanner.nextInt();
+        System.out.format("Tổng tiền = %f\n", total * unitPrice);
+    }
 
-                case 2:
-                    return new Rectangle();
+    private static Shape createShape(int choose) {
+        switch (choose) {
+            case 1:
+                return new Square();
 
-                case 3:
-                    return new Circle();
+            case 2:
+                return new Rectangle();
 
-//            case 4:
-//                return new Triangle();
+            case 3:
+                return new Circle();
 
-                default:
-                    return null;
-            }
+            case 4:
+                return new Triangle();
+            default:
+                return null;
         }
     }
+}
 
 
 
